@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-main: #FAF8F5;
+  --bg-secondary: #F3EFE8;
+  --card-bg: #FFFFFF;
+  --border-color: #E8E2D9;
+  --accent-amber: #C97B3D;
+  --accent-blue: #4F7CAC;
+  --text-primary: #1F2937;
+  --text-secondary: #6B7280;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+  selection-background-color: rgba(201, 123, 61, 0.2);
+  selection-color: #1F2937;
+}
+
+::selection {
+  background: rgba(201, 123, 61, 0.2);
+  color: #1F2937;
+}
+
+/* Warm Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #E8E2D9;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C97B3D;
+}
+
+/* Card Elevation & Hover Utility */
+.warm-card {
+  background: #FFFFFF;
+  border: 1px solid #E8E2D9;
+  box-shadow: 0 1px 3px rgba(31, 41, 55, 0.04);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.warm-card-hover:hover {
+  border-color: #D6CCC0;
+  box-shadow: 0 10px 25px -5px rgba(31, 41, 55, 0.08), 0 4px 6px -2px rgba(31, 41, 55, 0.04);
+  transform: translateY(-3px);
+}
+
+.gradient-text-amber {
+  background: linear-gradient(135deg, #1F2937 0%, #C97B3D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
