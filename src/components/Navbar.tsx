@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 import { Menu, X, Download } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
 
@@ -52,9 +53,11 @@ export const Navbar: React.FC = () => {
         
         {/* Brand Logo with Candidate Photo Avatar */}
         <a href="#hero" className="flex items-center gap-3 group">
-          <img
+          <Image
             src="/profile.jpg"
             alt="Brijesh Wadhwa Avatar"
+            width={36}
+            height={36}
             className="w-9 h-9 rounded-full object-cover object-top border-2 border-warm-border group-hover:border-warm-accent transition-colors shadow-xs"
           />
           <div className="flex flex-col">

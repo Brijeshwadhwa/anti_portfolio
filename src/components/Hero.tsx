@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { 
   Github, 
@@ -107,9 +108,12 @@ export const Hero: React.FC = () => {
           >
             <div className="warm-card p-3 rounded-3xl border border-warm-border shadow-warm-md relative group">
               <div className="overflow-hidden rounded-2xl relative">
-                <img
+                <Image
                   src="/profile.jpg"
                   alt="Brijesh Wadhwa - Cybersecurity Engineer"
+                  width={500}
+                  height={600}
+                  priority
                   className="w-full h-auto max-h-[460px] object-cover object-top rounded-2xl group-hover:scale-[1.02] transition-transform duration-300"
                 />
                 
