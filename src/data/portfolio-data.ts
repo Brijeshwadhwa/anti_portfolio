@@ -38,14 +38,15 @@ export const PORTFOLIO_DATA = {
   personal: {
     name: "Brijesh Wadhwa",
     title: "Cybersecurity Undergraduate • Threat Intelligence & Blue Team Operations",
-    intro: "Cybersecurity undergraduate specializing in Threat Intelligence, Blue Team Operations, and Security Automation. I build Python-based security tools for threat detection, IOC enrichment, and automated network reconnaissance.",
+    intro: "Cybersecurity undergraduate specializing in Threat Intelligence, Blue Team Operations, and Security Automation. Built three Python-based security tools for phishing detection, IOC enrichment, and network reconnaissance. Top 4% globally on TryHackMe with 110+ hands-on cybersecurity labs.",
     phone: "+91-6239980242",
     email: "brijeshwadhwa26@gmail.com",
     github: "https://github.com/Brijeshwadhwa",
     linkedin: "https://www.linkedin.com/in/brijeshwadhwa26/",
     tryhackme: "https://tryhackme.com/p/brijeshwadhwa26",
     leetcode: "https://leetcode.com/u/brijeshwadhwa26/",
-    location: "Punjab, India",
+    hackthebox: "https://profile.hackthebox.com/",
+    location: "Nawanshahr, Punjab, India",
     university: "Lovely Professional University (LPU)",
     degree: "B.Tech Computer Science (2023–Present) | CGPA: 7.14 / 10",
     currentFocus: [
@@ -66,30 +67,35 @@ export const PORTFOLIO_DATA = {
 
   about: {
     bio: "I am a Cybersecurity undergraduate at Lovely Professional University specializing in Threat Intelligence, Blue Team Operations, and Security Automation. I have engineered custom Python security tools using Flask, Streamlit, STIX 2.1, and threat intelligence APIs to automate IOC collection, phishing detection, and multithreaded network reconnaissance.",
-    motivation: "Deeply passionate about threat hunting, SOC monitoring, and defensive automation. Ranked among the Top 5% globally on TryHackMe with a continuous learning streak across hands-on cybersecurity labs covering networking, web security, Active Directory, and privilege escalation.",
+    motivation: "Deeply passionate about threat hunting, SOC monitoring, and defensive automation. Ranked among the Top 4% of TryHackMe learners globally with a 350-day continuous learning streak across 110+ hands-on cybersecurity labs covering networking, web security, Active Directory, and privilege escalation.",
     careerAspirations: "Actively seeking SOC Analyst, Cybersecurity Engineer, or Threat Intelligence opportunities where I can apply security automation, STIX 2.1 standards, and analytical problem-solving skills to defend organizational infrastructure."
   },
 
   skillGroups: [
     {
-      categoryName: "Core Expertise",
+      categoryName: "CyberSecurity & Threat Intel",
       iconName: "Shield",
-      badges: ["Threat Intelligence", "SOC / Blue Team", "Security Automation", "Network Security", "Python"]
+      badges: ["Threat Intelligence", "IOC Analysis & Enrichment", "OSINT", "Network Security", "Web App Security", "Phishing Analysis", "Security Automation", "Reconnaissance", "Defensive Security", "Vulnerability Assessment"]
     },
     {
-      categoryName: "Security",
+      categoryName: "Frameworks & Security Tools",
       iconName: "Radar",
-      badges: ["MITRE ATT&CK", "STIX 2.1", "Nmap", "Wireshark", "Burp Suite", "Linux"]
+      badges: ["MITRE ATT&CK", "STIX 2.1", "TCP/IP", "Wireshark", "Nmap", "Burp Suite", "Metasploit", "Shodan", "Virus Total"]
     },
     {
-      categoryName: "Development",
-      iconName: "Code",
-      badges: ["Python", "TypeScript", "JavaScript", "Flask", "FastAPI", "Streamlit", "Git", "Docker"]
-    },
-    {
-      categoryName: "Infrastructure & Data",
+      categoryName: "Security Domains",
       iconName: "Terminal",
-      badges: ["AWS Security (Basics)", "IAM", "SQL", "MongoDB", "MySQL", "HTML/CSS"]
+      badges: ["Network Reconnaissance", "Port Scanning", "Service Enumeration", "Intrusion Detection", "Privilege Escalation", "Active Directory Security"]
+    },
+    {
+      categoryName: "Programming & Frameworks",
+      iconName: "Code",
+      badges: ["Python", "Bash Scripting", "Streamlit", "Flask", "Tkinter", "FastAPI", "Hugging Face", "Java (Basics)", "C (Basics)", "JavaScript (Basics)"]
+    },
+    {
+      categoryName: "Cloud, Databases & DevSecOps",
+      iconName: "Terminal",
+      badges: ["AWS Security (Basics)", "IAM", "Cloud Security", "MongoDB", "MySQL", "SQL", "Git", "GitHub", "Docker", "REST APIs", "HTML/CSS"]
     }
   ] as SkillGroup[],
 
@@ -258,6 +264,13 @@ def scan_async(target_ip, port_range, callback):
 
   certifications: [
     {
+      title: "Introduction to CyberSecurity",
+      issuer: "Cisco Networking Academy",
+      year: "2025",
+      category: "Cybersecurity",
+      skills: ["Cyber Threat Landscape", "Security Architecture", "Vulnerability Triage"]
+    },
+    {
       title: "AWS Security Fundamentals",
       issuer: "AWS Training & Certification",
       year: "2026",
@@ -265,7 +278,7 @@ def scan_async(target_ip, port_range, callback):
       skills: ["AWS Security", "IAM Policies", "Cloud Compliance"]
     },
     {
-      title: "MongoDB University — Official Skill Badges",
+      title: "MongoDB University — 12 Official Skill Badges",
       issuer: "MongoDB University",
       year: "2025",
       category: "Databases",
@@ -277,24 +290,20 @@ def scan_async(target_ip, port_range, callback):
       year: "2024",
       category: "Artificial Intelligence",
       skills: ["Artificial Intelligence Fundamentals", "Digital Literacy"]
-    },
-    {
-      title: "Ethical Hacking: Command Injection",
-      issuer: "Udemy",
-      year: "2024",
-      category: "Ethical Hacking",
-      skills: ["Command Injection", "Web Application Vulnerabilities"]
     }
   ],
 
   achievements: {
-    tryHackMeRank: "Top 5% Global",
-    tryHackMeTitle: "Top 5% Learners Globally",
+    tryHackMeRank: "Top 4% Global",
+    tryHackMeTitle: "Top 4% Learners Globally (110+ Rooms)",
     tryhackmeUrl: "https://tryhackme.com/p/brijeshwadhwa26",
     leetcodeUrl: "https://leetcode.com/u/brijeshwadhwa26/",
-    thmStreak: 120,
-    thmRooms: 140,
+    hacktheboxUrl: "https://profile.hackthebox.com/",
+    thmStreak: 350,
+    thmRooms: 110,
     thmBadges: 28,
+    leetcodeSolved: 380,
+    leetcodeBadge: "200 Days Badge 2026",
   },
 
   education: [

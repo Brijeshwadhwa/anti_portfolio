@@ -4,13 +4,13 @@ const DEFAULT_USERNAME = process.env.LEETCODE_USERNAME || "brijeshwadhwa26";
 
 const FALLBACK_STATS: LeetCodeStats = {
   username: DEFAULT_USERNAME,
-  totalSolved: 287,
-  easySolved: 105,
-  mediumSolved: 140,
-  hardSolved: 42,
+  totalSolved: 380,
+  easySolved: 160,
+  mediumSolved: 170,
+  hardSolved: 50,
   ranking: 115240,
-  streak: 313,
-  badge: "100 Days Badge 2026",
+  streak: 350,
+  badge: "200 Days Badge 2026",
   lastUpdated: new Date().toISOString(),
   isLive: false,
 };

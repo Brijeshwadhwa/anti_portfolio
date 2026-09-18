@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Brijesh Wadhwa", url: "https://github.com/Brijeshwadhwa" }],
   openGraph: {
     title: "Brijesh Wadhwa | SOC Analyst & Cybersecurity Engineer",
-    description: "Industry-grade personal portfolio of Brijesh Wadhwa. Explore STIX 2.1 Threat Intel Pipelines, Phishing Heuristic Scanners, and TryHackMe Top 5% Milestones.",
+    description: "Industry-grade personal portfolio of Brijesh Wadhwa. Explore STIX 2.1 Threat Intel Pipelines, Phishing Heuristic Scanners, and TryHackMe Top 4% Milestones.",
     url: "https://github.com/Brijeshwadhwa",
     siteName: "Brijesh Wadhwa Portfolio",
     type: "website",
@@ -50,8 +50,10 @@ export default function RootLayout({
     url: "https://github.com/Brijeshwadhwa",
     sameAs: [
       "https://github.com/Brijeshwadhwa",
-      "https://www.linkedin.com/in/brijesh-wadhwa",
-      "https://tryhackme.com/p/Brijeshwadhwa"
+      "https://www.linkedin.com/in/brijeshwadhwa26/",
+      "https://tryhackme.com/p/brijeshwadhwa26",
+      "https://leetcode.com/u/brijeshwadhwa26/",
+      "https://profile.hackthebox.com/"
     ],
     knowsAbout: [
       "Cybersecurity",

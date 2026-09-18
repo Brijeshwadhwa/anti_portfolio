@@ -87,7 +87,7 @@ export const Contact: React.FC = () => {
                   href={PORTFOLIO_DATA.personal.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border hover:border-warm-accent text-warm-textSecondary hover:text-warm-textPrimary flex items-center justify-between text-xs font-mono transition-all"
+                  className="p-3 rounded-xl bg-warm-bgSecondary border border-warm-border hover:border-warm-accent text-warm-textSecondary hover:text-warm-textPrimary flex items-center justify-between text-xs font-mono transition-all"
                 >
                   <div className="flex items-center gap-2">
                     <Github className="w-4 h-4 text-warm-textPrimary" />
@@ -100,11 +100,50 @@ export const Contact: React.FC = () => {
                   href={PORTFOLIO_DATA.personal.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border hover:border-warm-blue text-warm-textSecondary hover:text-warm-textPrimary flex items-center justify-between text-xs font-mono transition-all"
+                  className="p-3 rounded-xl bg-warm-bgSecondary border border-warm-border hover:border-warm-blue text-warm-textSecondary hover:text-warm-textPrimary flex items-center justify-between text-xs font-mono transition-all"
                 >
                   <div className="flex items-center gap-2">
                     <Linkedin className="w-4 h-4 text-warm-blue" />
-                    <span>LinkedIn Profile</span>
+                    <span>LinkedIn / brijeshwadhwa26</span>
+                  </div>
+                  <span>↗</span>
+                </a>
+
+                <a
+                  href={PORTFOLIO_DATA.personal.tryhackme}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-warm-bgSecondary border border-warm-border hover:border-warm-accent text-warm-textSecondary hover:text-warm-textPrimary flex items-center justify-between text-xs font-mono transition-all"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-warm-accent" />
+                    <span>TryHackMe (Top 4%)</span>
+                  </div>
+                  <span>↗</span>
+                </a>
+
+                <a
+                  href={PORTFOLIO_DATA.personal.leetcode}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-warm-bgSecondary border border-warm-border hover:border-amber-500 text-warm-textSecondary hover:text-warm-textPrimary flex items-center justify-between text-xs font-mono transition-all"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-amber-500" />
+                    <span>LeetCode (380+ Solved)</span>
+                  </div>
+                  <span>↗</span>
+                </a>
+
+                <a
+                  href={PORTFOLIO_DATA.personal.hackthebox}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-3 rounded-xl bg-warm-bgSecondary border border-warm-border hover:border-emerald-500 text-warm-textSecondary hover:text-warm-textPrimary flex items-center justify-between text-xs font-mono transition-all"
+                >
+                  <div className="flex items-center gap-2">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500" />
+                    <span>HackTheBox Profile</span>
                   </div>
                   <span>↗</span>
                 </a>

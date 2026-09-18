@@ -79,7 +79,7 @@ export const LiveEngineeringStats: React.FC = () => {
                 </div>
                 <span className="px-2.5 py-1 text-[10px] font-mono font-bold bg-warm-accent text-white rounded-full flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
-                  {lc?.badge || "100 Days 2026"}
+                  {lc?.badge || "200 Days Badge 2026"}
                 </span>
               </div>
 
@@ -93,26 +93,26 @@ export const LiveEngineeringStats: React.FC = () => {
                   <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                     <span className="text-warm-textSecondary">Total Solved</span>
                     <span className="font-bold text-warm-textPrimary text-base">
-                      {lc?.totalSolved || 287}+ Problems
+                      {lc?.totalSolved || 380}+ Problems
                     </span>
                   </div>
 
                   <div className="grid grid-cols-3 gap-2 text-center text-[11px]">
                     <div className="p-2 rounded-lg bg-emerald-500/10 border border-emerald-500/20 text-emerald-700 font-bold">
-                      Easy: {lc?.easySolved || 105}
+                      Easy: {lc?.easySolved || 160}
                     </div>
                     <div className="p-2 rounded-lg bg-amber-500/10 border border-amber-500/20 text-amber-700 font-bold">
-                      Med: {lc?.mediumSolved || 140}
+                      Med: {lc?.mediumSolved || 170}
                     </div>
                     <div className="p-2 rounded-lg bg-rose-500/10 border border-rose-500/20 text-rose-700 font-bold">
-                      Hard: {lc?.hardSolved || 42}
+                      Hard: {lc?.hardSolved || 50}
                     </div>
                   </div>
 
-                  <div className="p-3 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
+                  <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                     <span className="text-warm-textSecondary">Global Ranking</span>
-                    <span className="font-bold text-warm-textPrimary">
-                      #{lc?.ranking ? lc.ranking.toLocaleString() : "Top 5%"}
+                    <span className="font-bold text-warm-success">
+                      #{lc?.ranking ? lc.ranking.toLocaleString() : "Top 4%"}
                     </span>
                   </div>
                 </div>
@@ -150,7 +150,7 @@ export const LiveEngineeringStats: React.FC = () => {
                   </div>
                 </div>
                 <span className="px-2.5 py-1 text-[10px] font-mono font-bold bg-warm-success text-white rounded-full">
-                  {thm?.thmRank || "Top 5% Global"}
+                  {thm?.thmRank || "Top 4% Global"}
                 </span>
               </div>
 
@@ -165,21 +165,21 @@ export const LiveEngineeringStats: React.FC = () => {
                     <span className="text-warm-textSecondary">Learning Streak</span>
                     <span className="font-bold text-warm-accent flex items-center gap-1">
                       <Flame className="w-4 h-4" />
-                      {thm?.thmStreak || "313-Day Streak"}
+                      {thm?.thmStreak || "350-Day Streak"}
                     </span>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                     <span className="text-warm-textSecondary">Completed Labs</span>
                     <span className="font-bold text-warm-blue">
-                      {thm?.thmRooms || "96+ Labs Solved"}
+                      {thm?.thmRooms || "110+ Labs Solved"}
                     </span>
                   </div>
 
                   <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                     <span className="text-warm-textSecondary">Skill Badges</span>
                     <span className="font-bold text-warm-textPrimary">
-                      {thm?.thmBadges || "15+ Badges"}
+                      {thm?.thmBadges || "28+ Badges"}
                     </span>
                   </div>
                 </div>

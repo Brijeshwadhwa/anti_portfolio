@@ -67,25 +67,25 @@ export const TryHackMeStats: React.FC = () => {
                   </div>
                 </div>
                 <span className="px-3 py-1 text-xs font-mono font-bold bg-warm-accent text-white rounded-full">
-                  {thm?.thmRank || "Top 5% Global"}
+                  {thm?.thmRank || "Top 4% Global"}
                 </span>
               </div>
 
               <div className="space-y-3 mb-6 font-mono text-xs">
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Global Ranking &amp; Status</span>
-                  <span className="font-bold text-warm-textPrimary text-sm">{thm?.thmRank || "Top 5% Global"}</span>
+                  <span className="font-bold text-warm-textPrimary text-sm">{thm?.thmRank || "Top 4% Global"}</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Continuous Learning Streak</span>
                   <span className="font-bold text-warm-accent flex items-center gap-1">
                     <Flame className="w-4 h-4" />
-                    {thm?.thmStreak || ach.thmStreak}
+                    {thm?.thmStreak || "350-Day Streak"}
                   </span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Labs &amp; Badges Completed</span>
-                  <span className="font-bold text-warm-blue">{thm?.thmRooms || ach.thmRooms} • {thm?.thmBadges || ach.thmBadges}</span>
+                  <span className="font-bold text-warm-blue">{thm?.thmRooms || "110+ Labs"} • {thm?.thmBadges || "28+ Badges"}</span>
                 </div>
               </div>
             </div>
@@ -122,19 +122,19 @@ export const TryHackMeStats: React.FC = () => {
                 </div>
                 <span className="px-3 py-1 text-xs font-mono font-bold bg-warm-blue text-white rounded-full flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
-                  {lc?.badge || "100 Days Badge 2026"}
+                  {lc?.badge || "200 Days Badge 2026"}
                 </span>
               </div>
 
               <div className="space-y-3 mb-6 font-mono text-xs">
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Total Problems Solved</span>
-                  <span className="font-bold text-warm-textPrimary text-sm">{lc?.totalSolved || 379}+ Solved</span>
+                  <span className="font-bold text-warm-textPrimary text-sm">{lc?.totalSolved || 380}+ Solved</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Difficulty Breakdown</span>
                   <span className="font-bold text-warm-blue">
-                    Easy: {lc?.easySolved || 159} | Med: {lc?.mediumSolved || 169} | Hard: {lc?.hardSolved || 51}
+                    Easy: {lc?.easySolved || 160} | Med: {lc?.mediumSolved || 170} | Hard: {lc?.hardSolved || 50}
                   </span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">

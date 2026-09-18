@@ -34,8 +34,8 @@ export const Hero: React.FC = () => {
     loadStats();
   }, []);
 
-  const lcSolved = stats?.leetcode?.totalSolved || 379;
-  const thmRank = stats?.tryhackme?.thmRank || "Top 5% Global";
+  const lcSolved = stats?.leetcode?.totalSolved || 380;
+  const thmRank = stats?.tryhackme?.thmRank || "Top 4% Global";
   const ghRepos = stats?.github?.totalRepos || 35;
 
   return (

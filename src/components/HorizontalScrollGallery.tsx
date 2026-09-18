@@ -100,12 +100,12 @@ const GALLERY_PROJECTS: GalleryProject[] = [
     accentColor: "#8B5CF6", // violet
     glowColor: "rgba(139, 92, 246, 0.25)",
     gradient: "from-[#8B5CF6]/20 via-[#8B5CF6]/5 to-transparent",
-    description: "Hands-on threat hunting and defensive engineering across 130+ cybersecurity labs. Ranked in the Top 5% globally on TryHackMe for active defense, packet analysis, and ATT&CK alignment.",
-    technologies: ["MITRE ATT&CK", "Wireshark", "TryHackMe (Top 5%)", "Linux", "SIEM"],
+    description: "Hands-on threat hunting and defensive engineering across 110+ cybersecurity labs. Ranked in the Top 4% globally on TryHackMe with a 350-day streak for active defense, packet analysis, and ATT&CK alignment.",
+    technologies: ["MITRE ATT&CK", "Wireshark", "TryHackMe (Top 4%)", "Linux", "SIEM"],
     metrics: [
-      { label: "Global Rank", value: "Top 5%" },
-      { label: "Streak", value: "12+ Days" },
-      { label: "Rooms", value: "130+ Completed" }
+      { label: "Global Rank", value: "Top 4%" },
+      { label: "Streak", value: "350 Days" },
+      { label: "Rooms", value: "110+ Solved" }
     ],
     githubUrl: "https://tryhackme.com/p/brijeshwadhwa26",
     demoUrl: "https://tryhackme.com/p/brijeshwadhwa26",
