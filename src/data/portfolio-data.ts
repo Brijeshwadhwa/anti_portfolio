@@ -24,6 +24,7 @@ export interface CaseStudyProject {
   lessonsLearned: string[];
   futureImprovements: string[];
   githubUrl: string;
+  liveDemoUrl?: string;
   featured: boolean;
 }
 
@@ -36,8 +37,8 @@ export interface SkillGroup {
 export const PORTFOLIO_DATA = {
   personal: {
     name: "Brijesh Wadhwa",
-    title: "Aspiring SOC Analyst • Cybersecurity Enthusiast",
-    intro: "Cybersecurity undergraduate with practical experience in threat intelligence, phishing detection, network reconnaissance, and security automation. Developed security-focused applications using Python, Streamlit, Scapy, Nmap, and STIX 2.1. Ranked among the Top 5% on TryHackMe with a 313-day learning streak.",
+    title: "Cybersecurity Undergraduate • Threat Intelligence & Blue Team Operations",
+    intro: "Cybersecurity undergraduate specializing in Threat Intelligence, Blue Team Operations, and Security Automation. I build Python-based security tools for threat detection, IOC enrichment, and automated network reconnaissance.",
     phone: "+91-6239980242",
     email: "brijeshwadhwa26@gmail.com",
     github: "https://github.com/Brijeshwadhwa",
@@ -46,71 +47,78 @@ export const PORTFOLIO_DATA = {
     leetcode: "https://leetcode.com/u/brijeshwadhwa26/",
     location: "Punjab, India",
     university: "Lovely Professional University (LPU)",
-    degree: "B.Tech Computer Science (2023–Present) | CGPA: 7.14/10",
+    degree: "B.Tech Computer Science (2023–Present) | CGPA: 7.14 / 10",
     currentFocus: [
-      { name: "Threat Intelligence", desc: "STIX 2.1 pipelines, AbuseIPDB/OTX ingestion & WHOIS enrichment." },
-      { name: "Phishing Detection", desc: "Hugging Face AI models, URL entropy & WhatsApp Twilio bot." },
-      { name: "Network Reconnaissance", desc: "Automated Nmap port scanning & Wireshark traffic analysis." },
-      { name: "Security Automation", desc: "Python scripting for automated vulnerability scanning & log exports." },
-      { name: "SOC Operations", desc: "Incident response, log triage, and defensive security labs." },
-      { name: "MITRE ATT&CK", desc: "Mapping threat vectors to adversary TTPs." }
+      {
+        name: "Threat Intelligence",
+        desc: "Automated IOC collection, AbuseIPDB/AlienVault OTX enrichment, STIX 2.1 schema normalization, and MITRE ATT&CK mapping.",
+      },
+      {
+        name: "SOC / Blue Team",
+        desc: "Threat hunting, detection engineering, security log triage, and defensive operations across hands-on labs.",
+      },
+      {
+        name: "Security Automation",
+        desc: "Python & Bash scripting for rapid vulnerability scanning, network reconnaissance, and threat analysis workflows.",
+      },
     ]
   },
 
   about: {
-    bio: "Cybersecurity undergraduate with practical experience in threat intelligence, phishing detection, network reconnaissance, and security automation. I have built security-focused applications leveraging Python, Streamlit, Scapy, Nmap, and STIX 2.1 for threat monitoring and risk scoring.",
-    motivation: "Passionate about SOC operations, threat hunting, incident response, and continuous security monitoring. Ranked #117,949 globally on TryHackMe with the 0x9 Mage title and a 313-day continuous learning streak across offensive and defensive labs.",
-    careerAspirations: "Actively seeking entry-level SOC Analyst, Cybersecurity Analyst, or Security Engineer opportunities where I can apply my threat intelligence and security automation skills to protect organizational assets."
+    bio: "I am a Cybersecurity undergraduate at Lovely Professional University specializing in Threat Intelligence, Blue Team Operations, and Security Automation. I have engineered custom Python security tools using Flask, Streamlit, STIX 2.1, and threat intelligence APIs to automate IOC collection, phishing detection, and multithreaded network reconnaissance.",
+    motivation: "Deeply passionate about threat hunting, SOC monitoring, and defensive automation. Ranked among the Top 5% globally on TryHackMe with a continuous learning streak across hands-on cybersecurity labs covering networking, web security, Active Directory, and privilege escalation.",
+    careerAspirations: "Actively seeking SOC Analyst, Cybersecurity Engineer, or Threat Intelligence opportunities where I can apply security automation, STIX 2.1 standards, and analytical problem-solving skills to defend organizational infrastructure."
   },
 
   skillGroups: [
     {
-      categoryName: "Languages",
-      iconName: "Code",
-      badges: ["Python", "C", "Java", "JavaScript"]
-    },
-    {
-      categoryName: "Web & Frameworks",
-      iconName: "Terminal",
-      badges: ["Streamlit", "Flask", "Tkinter", "HTML", "CSS"]
-    },
-    {
-      categoryName: "Security Tools",
+      categoryName: "Core Expertise",
       iconName: "Shield",
-      badges: ["Wireshark", "Nmap", "Burp Suite", "Shodan", "Git/GitHub"]
+      badges: ["Threat Intelligence", "SOC / Blue Team", "Security Automation", "Network Security", "Python"]
     },
     {
-      categoryName: "Core Concepts",
+      categoryName: "Security",
       iconName: "Radar",
-      badges: ["STIX 2.1", "MITRE ATT&CK", "TCP/IP", "Threat Intelligence", "Linux"]
+      badges: ["MITRE ATT&CK", "STIX 2.1", "Nmap", "Wireshark", "Burp Suite", "Linux"]
+    },
+    {
+      categoryName: "Development",
+      iconName: "Code",
+      badges: ["Python", "TypeScript", "JavaScript", "Flask", "FastAPI", "Streamlit", "Git", "Docker"]
+    },
+    {
+      categoryName: "Infrastructure & Data",
+      iconName: "Terminal",
+      badges: ["AWS Security (Basics)", "IAM", "SQL", "MongoDB", "MySQL", "HTML/CSS"]
     }
   ] as SkillGroup[],
 
   projects: [
     {
       id: "threat-intel-pipeline",
-      title: "Threat Intelligence Pipeline",
-      subtitle: "Multi-Source Threat Harvesting, STIX 2.1 Normalization & Streamlit Dashboard",
+      title: "Threat Intelligence Platform",
+      subtitle: "Python — Streamlit — Flask — STIX 2.1 — AbuseIPDB — AlienVault OTX",
       category: "Threat Intelligence",
-      heroTag: "Python • Streamlit • SQLite • STIX 2.1 • Docker",
-      problemStatement: "Security operations require unifying fragmented threat data from multiple feeds into standardized formats for rapid analysis.",
-      whyExists: "Automated threat intelligence collection from AbuseIPDB, AlienVault OTX, and RSS feeds. Normalized and enriched IOCs using STIX 2.1, GeoIP, WHOIS, and MITRE ATT&CK.",
-      architectureWorkflow: "AbuseIPDB / AlienVault OTX / RSS ──> Python Collector ──> STIX 2.1 Normalizer ──> GeoIP & WHOIS Enricher ──> SQLite DB ──> Streamlit Dashboard & Export",
-      technologies: ["Python", "Streamlit", "SQLite", "STIX 2.1", "GeoIP", "WHOIS", "MITRE ATT&CK", "Docker"],
+      heroTag: "Python • Streamlit • Flask • STIX 2.1 • AbuseIPDB • AlienVault OTX",
+      problemStatement: "Security operations require unifying fragmented threat data from multiple feeds into standardized formats for rapid investigation and response.",
+      whyExists: "Automated the collection and enrichment of Indicators of Compromise (IOCs) from AbuseIPDB, AlienVault OTX, and RSS feeds into a unified threat intelligence platform normalized with STIX 2.1 standards.",
+      architectureWorkflow: "AbuseIPDB / AlienVault OTX / RSS Feeds ──> Python Collector ──> STIX 2.1 Normalizer ──> GeoIP & WHOIS Enricher ──> MITRE ATT&CK Mapping ──> Streamlit Dashboard",
+      technologies: ["Python", "Streamlit", "Flask", "STIX 2.1", "AbuseIPDB API", "AlienVault OTX", "GeoIP", "WHOIS", "MITRE ATT&CK"],
       securityConcepts: [
-        "STIX 2.1 Standardized Schema",
-        "IOC Normalization & Enrichment",
-        "GeoIP & WHOIS Infrastructure Recon",
-        "MITRE ATT&CK Mapping"
+        "STIX 2.1 Standardized Schema Normalization",
+        "Multi-Source IOC Collection & Enrichment",
+        "GeoIP & WHOIS Infrastructure Reconnaissance",
+        "MITRE ATT&CK Contextual Threat Mapping"
       ],
       threatModel: [
         { tactic: "Command & Control", technique: "T1071 (Application Layer Protocol)", description: "Detecting malicious C2 callback IPs across public threat feeds." },
         { tactic: "Initial Access", technique: "T1566 (Phishing)", description: "Identifying malicious domain infrastructure used in phishing payloads." }
       ],
       implementationDetails: [
-        "Automated threat intelligence collection from AbuseIPDB, AlienVault OTX, and RSS feeds.",
-        "Normalized and enriched IOCs using STIX 2.1, GeoIP, WHOIS, and MITRE ATT&CK.",
-        "Built a Streamlit dashboard with threat analytics and CSV, JSON, and STIX exports."
+        "Automated the collection and enrichment of Indicators of Compromise (IOCs) from AbuseIPDB, AlienVault OTX, and RSS feeds into a unified threat intelligence platform.",
+        "Normalized IOC data using the STIX 2.1 standard, improving interoperability between multiple threat intelligence sources.",
+        "Integrated GeoIP, WHOIS, and MITRE ATT&CK mapping to provide contextual threat analysis for security investigations.",
+        "Designed a Streamlit dashboard supporting CSV, JSON, and STIX exports for simplified threat analysis and reporting."
       ],
       codeSnippets: [
         {
@@ -124,41 +132,43 @@ export const PORTFOLIO_DATA = {
         }
       ],
       challengesSolved: [
-        "Handling rate limits across public threat APIs gracefully.",
-        "Ensuring 100% compliance with STIX 2.1 JSON specifications."
+        "Handling rate limits across public threat APIs gracefully with retries and exponential backoff.",
+        "Ensuring strict compliance with STIX 2.1 JSON specifications across diverse IOC formats."
       ],
       lessonsLearned: [
-        "STIX 2.1 schema standardization enables interoperability across SIEM tools."
+        "STIX 2.1 schema standardization significantly improves interoperability between threat intelligence tools and SIEM platforms."
       ],
       futureImprovements: [
-        "Implement TAXII 2.1 server push mechanism."
+        "Implement TAXII 2.1 server push mechanism for real-time automated feed distribution."
       ],
       githubUrl: "https://github.com/Brijeshwadhwa/Threat-Intellgence-Pipeline",
+      liveDemoUrl: "https://github.com/Brijeshwadhwa/Threat-Intellgence-Pipeline",
       featured: true
     },
     {
       id: "whatsapp-phishing-detector",
       title: "WhatsApp Phishing Detector",
-      subtitle: "AI-Powered Phishing Detector via Hugging Face, Flask & Twilio WhatsApp Integration",
+      subtitle: "Python — Streamlit — Flask — Twilio — Hugging Face",
       category: "Security Automation",
       heroTag: "Python • Streamlit • Flask • Twilio • Hugging Face",
-      problemStatement: "Instant messaging channels like WhatsApp are susceptible to obfuscated phishing links and social engineering scams.",
-      whyExists: "Developed an AI-powered phishing detector using Hugging Face with rule-based fallback to analyze URLs, urgency keywords, and forwarding patterns.",
-      architectureWorkflow: "WhatsApp User ──> Twilio Webhook ──> Flask Backend ──> Hugging Face / Rule-Based Analyzer ──> Phishing Risk Score ──> WhatsApp Response",
-      technologies: ["Python", "Streamlit", "Flask", "Twilio API", "Hugging Face", "Regex"],
+      problemStatement: "Instant messaging channels like WhatsApp are frequently targeted with obfuscated phishing links and social engineering tactics.",
+      whyExists: "Developed an AI-powered phishing detection system that analyzes WhatsApp messages using Hugging Face NLP models paired with a rule-based fallback engine.",
+      architectureWorkflow: "WhatsApp User ──> Twilio WhatsApp API ──> Flask Backend ──> Hugging Face NLP Model / Rule Engine ──> Risk Score Calculation ──> Interactive Web Dashboard & Alert",
+      technologies: ["Python", "Streamlit", "Flask", "Twilio WhatsApp API", "Hugging Face", "Regex NLP", "URL Shannon Entropy"],
       securityConcepts: [
-        "Phishing & Social Engineering Detection",
-        "URL Keyword & Urgency Pattern Analysis",
-        "Twilio Webhook Integration",
-        "Hugging Face AI Classification"
+        "AI-Powered Phishing & Social Engineering Analysis",
+        "URL Entropy, Urgency Indicators & Suspicious Language Detection",
+        "Twilio WhatsApp API Webhook Automation",
+        "Interactive Web Dashboard for Malicious URL Identification"
       ],
       threatModel: [
-        { tactic: "Initial Access", technique: "T1566.002 (Spearphishing Link)", description: "Detecting deceptive links in messaging channels." }
+        { tactic: "Initial Access", technique: "T1566.002 (Spearphishing Link)", description: "Detecting deceptive links and urgent language in instant messages." }
       ],
       implementationDetails: [
-        "Developed an AI-powered phishing detector using Hugging Face with rule-based fallback.",
-        "Analyzed URLs, urgency keywords, and forwarding patterns to generate phishing risk scores.",
-        "Integrated a Streamlit web app with a Twilio WhatsApp bot for real-time analysis."
+        "Developed an AI-powered phishing detection system that analyzes WhatsApp messages using Hugging Face NLP models with a rule-based fallback engine.",
+        "Evaluated URLs, urgency indicators, forwarding behavior, and suspicious language to generate phishing risk scores.",
+        "Integrated the Twilio WhatsApp API to enable real-time phishing detection and automated user reporting.",
+        "Built an interactive web dashboard for phishing analysis and malicious URL identification."
       ],
       codeSnippets: [
         {
@@ -172,39 +182,42 @@ def calculate_url_entropy(url: str) -> float:
         }
       ],
       challengesSolved: [
-        "Blending AI model predictions with instant rule-based fallback for rapid response."
+        "Combining AI NLP predictions with instant rule-based fallback for low-latency message scoring."
       ],
       lessonsLearned: [
-        "Analyzing URL entropy and keyword urgency provides fast indicators of social engineering."
+        "Combining text urgency signals with URL Shannon entropy yields fast, robust phishing risk scores."
       ],
       futureImprovements: [
-        "Expand training dataset with localized phishing templates."
+        "Train custom domain-specific transformer models on multi-lingual messaging datasets."
       ],
       githubUrl: "https://github.com/Brijeshwadhwa/Whatsapp-Phishing-Detector",
+      liveDemoUrl: "https://github.com/Brijeshwadhwa/Whatsapp-Phishing-Detector",
       featured: true
     },
     {
       id: "automated-nmap-scanner",
       title: "Automated Nmap Scanner with GUI",
-      subtitle: "Tkinter Desktop Application for Multithreaded Port Scanning & Service Detection",
+      subtitle: "Python — Tkinter — Nmap",
       category: "Security Automation",
       heroTag: "Python • Tkinter • Nmap",
-      problemStatement: "Command line scanning can be time-consuming during rapid host enumeration.",
-      whyExists: "Built a Tkinter GUI to automate Nmap port scanning with real-time scan results, multithreaded execution, and report generation.",
-      architectureWorkflow: "Tkinter UI ──> IP Validator ──> Thread Pool ──> Nmap Process ──> Scan Report Exporter",
-      technologies: ["Python", "Tkinter", "Nmap"],
+      problemStatement: "Command-line network scanning can be cumbersome and slow for rapid host discovery and service enumeration during assessments.",
+      whyExists: "Developed a multithreaded network reconnaissance tool using Python, Tkinter, and Nmap for automated host discovery and service enumeration.",
+      architectureWorkflow: "Tkinter Desktop GUI ──> IP Validation & Input Check ──> ThreadPool Worker Execution ──> Nmap Engine (-sV, -O) ──> Live Progress Tracking ──> Scan Report Exporter",
+      technologies: ["Python", "Tkinter", "Nmap Engine", "Multithreading", "Subprocess Control"],
       securityConcepts: [
-        "Port Scanning & Service Versioning",
-        "Multithreaded GUI Execution",
-        "XML & Text Report Exporting"
+        "Automated Host Discovery & Service Enumeration",
+        "TCP Port Scanning & Version Detection",
+        "Live Progress Tracking & Multithreaded Execution",
+        "Exportable Security Audit Scan Reports"
       ],
       threatModel: [
-        { tactic: "Reconnaissance", technique: "T1046 (Network Service Discovery)", description: "Automating target port discovery and OS fingerprinting." }
+        { tactic: "Reconnaissance", technique: "T1046 (Network Service Discovery)", description: "Automating target port discovery and service version fingerprinting." }
       ],
       implementationDetails: [
-        "Built a Tkinter GUI to automate Nmap port scanning with real-time scan results.",
-        "Implemented multithreaded scanning and input validation for faster, reliable network analysis.",
-        "Identified open ports, detected running services, and exported scan reports."
+        "Developed a multithreaded network reconnaissance tool using Python and Nmap for automated host discovery and service enumeration.",
+        "Implemented TCP port scanning, service detection, and live scan progress tracking.",
+        "Improved scanning efficiency through concurrent execution, input validation, and robust error handling.",
+        "Generated exportable scan reports for vulnerability assessments and security audits."
       ],
       codeSnippets: [
         {
@@ -222,13 +235,13 @@ def scan_async(target_ip, port_range, callback):
         }
       ],
       challengesSolved: [
-        "Preventing UI freeze during long scan cycles via async worker threads."
+        "Eliminated UI freeze during long scan operations via asynchronous worker threading."
       ],
       lessonsLearned: [
-        "Automating Nmap execution simplifies routine perimeter audits."
+        "Multithreaded execution drastically speeds up network perimeter reconnaissance."
       ],
       futureImprovements: [
-        "Include NSE vulnerability script selector flags."
+        "Add modular NSE (Nmap Scripting Engine) vulnerability vulnerability scan presets."
       ],
       githubUrl: "https://github.com/Brijeshwadhwa/automated_nmap_scanner",
       featured: true
@@ -237,85 +250,78 @@ def scan_async(target_ip, port_range, callback):
 
   training: [
     {
-      title: "Board Infinity – Summer Training (DSA)",
+      title: "Board Infinity — Summer Training",
       period: "Jun 2025 – Jul 2025",
-      description: "Completed industry-recognized Data Structures & Algorithms training covering arrays, trees, graphs, recursion, sorting, and searching algorithms."
+      description: "Data Structures & Algorithms: Completed intensive training in data structures, algorithms, recursion, trees, graphs, sorting, and searching."
     }
   ],
 
   certifications: [
     {
+      title: "AWS Security Fundamentals",
+      issuer: "AWS Training & Certification",
+      year: "2026",
+      category: "Cloud Security",
+      skills: ["AWS Security", "IAM Policies", "Cloud Compliance"]
+    },
+    {
+      title: "MongoDB University — Official Skill Badges",
+      issuer: "MongoDB University",
+      year: "2025",
+      category: "Databases",
+      skills: ["12 Official Skill Badges", "MongoDB Querying", "Data Modeling"]
+    },
+    {
       title: "AI For All: AI Appreciate",
       issuer: "Intel & Digital India",
       year: "2024",
       category: "Artificial Intelligence",
-      skills: ["Artificial Intelligence Fundamentals", "Digital Literacy", "AI Ethics"]
-    },
-    {
-      title: "Master Generative AI and Generative AI Tools",
-      issuer: "Udemy",
-      year: "2024",
-      category: "Generative AI",
-      skills: ["Generative AI", "LLM Prompting", "AI Productivity Tools"]
+      skills: ["Artificial Intelligence Fundamentals", "Digital Literacy"]
     },
     {
       title: "Ethical Hacking: Command Injection",
       issuer: "Udemy",
       year: "2024",
       category: "Ethical Hacking",
-      skills: ["Command Injection", "Web Application Vulnerabilities", "Input Sanitization"]
-    },
-    {
-      title: "Computer Programming in C",
-      issuer: "iamneo",
-      year: "2023",
-      category: "Programming",
-      skills: ["C Programming", "Memory Management", "Pointers & Data Structures"]
+      skills: ["Command Injection", "Web Application Vulnerabilities"]
     }
   ],
 
   achievements: {
-    tryHackMeRank: "#117,949 Globally",
-    tryHackMeTitle: "0x9 Mage",
-    thmRank: "Top 5% Global",
-    thmStreak: "313-Day Streak",
-    thmRooms: "96 Rooms Solved",
-    thmBadges: "15 Badges Earned",
+    tryHackMeRank: "Top 5% Global",
+    tryHackMeTitle: "Top 5% Learners Globally",
     tryhackmeUrl: "https://tryhackme.com/p/brijeshwadhwa26",
-    
-    leetCodeSolved: "287+ Solved",
-    leetCodeEasy: "105 Easy",
-    leetCodeMedium: "140 Medium",
-    leetCodeHard: "42 Hard",
-    leetCodeBadge: "100 Days Badge 2026",
-    leetcodeUrl: "https://leetcode.com/u/brijeshwadhwa26/"
+    leetcodeUrl: "https://leetcode.com/u/brijeshwadhwa26/",
+    thmStreak: 120,
+    thmRooms: 140,
+    thmBadges: 28,
   },
 
   education: [
     {
       institution: "Lovely Professional University",
-      qualification: "B.Tech Computer Science (2023–Present)",
+      qualification: "B.Tech Computer Science (2023 – Present)",
       grade: "CGPA: 7.14 / 10"
     },
     {
       institution: "Govt. Sr. Sec. Smart School",
       qualification: "Class XII",
-      grade: "87.6%"
+      grade: "Class XII 87.6%"
     },
     {
       institution: "Dr. Asa Nand Arya Model Sr. Sec. School",
       qualification: "Class X",
-      grade: "100%"
+      grade: "Class X 100%"
     }
   ],
 
   githubMetrics: {
-    totalRepos: 32,
-    primaryLanguages: ["Python", "JavaScript / TypeScript", "HTML/CSS", "Java", "C"],
+    totalRepos: 35,
+    primaryLanguages: ["Python", "TypeScript", "JavaScript", "C", "Java", "Bash Scripting"],
     pinnedRepos: [
-      { name: "Threat-Intellgence-Pipeline", lang: "Python", desc: "Automated threat intelligence collection, STIX 2.1 normalization, and Streamlit dashboard." },
-      { name: "Whatsapp-Phishing-Detector", lang: "Python", desc: "AI-powered phishing detector bot using Hugging Face & Twilio." },
-      { name: "automated_nmap_scanner", lang: "Python", desc: "Tkinter GUI application to automate Nmap port scanning." }
+      { name: "Threat-Intellgence-Pipeline", lang: "Python", desc: "Automated IOC collection from AbuseIPDB, AlienVault OTX & RSS, STIX 2.1 normalization, GeoIP/WHOIS enrichment & Streamlit dashboard." },
+      { name: "Whatsapp-Phishing-Detector", lang: "Python", desc: "AI-powered phishing detection system analyzing WhatsApp messages using Hugging Face NLP models, URL entropy & Twilio API." },
+      { name: "automated_nmap_scanner", lang: "Python", desc: "Multithreaded network reconnaissance GUI tool using Python & Nmap for automated host discovery, TCP port scanning & service detection." }
     ]
   }
 };

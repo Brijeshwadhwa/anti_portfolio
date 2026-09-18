@@ -1,12 +1,31 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Github, ExternalLink, GitBranch } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
+import { AggregatedStats } from "@/lib/stats/types";
 
 export const GitHubSection: React.FC = () => {
-  const gh = PORTFOLIO_DATA.githubMetrics;
+  const [stats, setStats] = useState<AggregatedStats | null>(null);
+
+  useEffect(() => {
+    async function loadStats() {
+      try {
+        const res = await fetch("/api/stats");
+        if (res.ok) {
+          const data: AggregatedStats = await res.json();
+          setStats(data);
+        }
+      } catch (err) {
+        console.warn("GitHubSection fetch error:", err);
+      }
+    }
+    loadStats();
+  }, []);
+
+  const ghData = PORTFOLIO_DATA.githubMetrics;
+  const ghLive = stats?.github;
 
   return (
     <section id="github" className="py-20 relative z-10 bg-warm-bgSecondary">
@@ -28,13 +47,15 @@ export const GitHubSection: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
           <div className="warm-card p-5 rounded-xl text-center border border-warm-border">
             <span className="text-xs font-mono text-warm-textSecondary block mb-1">Public Repositories</span>
-            <span className="text-3xl font-black text-warm-textPrimary font-mono">{gh.totalRepos}</span>
+            <span className="text-3xl font-black text-warm-textPrimary font-mono">
+              {ghLive?.totalRepos || ghData.totalRepos}
+            </span>
           </div>
 
           <div className="warm-card p-5 rounded-xl text-center border border-warm-border">
             <span className="text-xs font-mono text-warm-textSecondary block mb-1">Primary Languages</span>
             <div className="flex flex-wrap items-center justify-center gap-1 mt-1">
-              {gh.primaryLanguages.map((lang) => (
+              {(ghLive?.primaryLanguages || ghData?.primaryLanguages || ["Python", "TypeScript", "JavaScript", "C"]).map((lang) => (
                 <span key={lang} className="px-2 py-0.5 text-[10px] font-mono bg-warm-accent/10 text-warm-accent rounded font-semibold">
                   {lang}
                 </span>
@@ -58,7 +79,7 @@ export const GitHubSection: React.FC = () => {
 
         {/* Pinned Repositories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {gh.pinnedRepos.map((repo, idx) => (
+          {ghData.pinnedRepos.map((repo, idx) => (
             <motion.div
               key={repo.name}
               initial={{ opacity: 0, y: 15 }}

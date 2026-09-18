@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Copy, Check, Send, Github, Linkedin, Download } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
+import { ShineBorder } from "@/components/ui/shine-border";
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -132,8 +133,14 @@ export const Contact: React.FC = () => {
             transition={{ duration: 0.5 }}
             className="lg:col-span-7"
           >
-            <div className="warm-card p-6 sm:p-8 rounded-2xl border border-warm-border">
-              <h3 className="text-lg font-bold text-warm-textPrimary mb-6">Send Message</h3>
+            <div className="warm-card relative overflow-hidden p-6 sm:p-8 rounded-2xl border border-warm-border">
+              <ShineBorder 
+                shineColor={["#C97B3D", "#38BDF8", "#10B981"]} 
+                borderRadius={16} 
+                borderWidth={1.5}
+                duration={12}
+              />
+              <h3 className="text-lg font-bold text-warm-textPrimary mb-6 relative z-10">Send Message</h3>
 
               {formSubmitted ? (
                 <div className="p-8 rounded-xl bg-warm-success/10 border border-warm-success/30 text-center space-y-2">

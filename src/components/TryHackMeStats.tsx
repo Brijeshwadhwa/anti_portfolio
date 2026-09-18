@@ -1,12 +1,32 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Trophy, Flame, CheckCircle, Code, ExternalLink, Award, Sparkles, Terminal } from "lucide-react";
+import { Trophy, Flame, Code, ExternalLink, Sparkles } from "lucide-react";
 import { PORTFOLIO_DATA } from "@/data/portfolio-data";
+import { AggregatedStats } from "@/lib/stats/types";
 
 export const TryHackMeStats: React.FC = () => {
+  const [stats, setStats] = useState<AggregatedStats | null>(null);
+
+  useEffect(() => {
+    async function loadStats() {
+      try {
+        const res = await fetch("/api/stats");
+        if (res.ok) {
+          const data: AggregatedStats = await res.json();
+          setStats(data);
+        }
+      } catch (err) {
+        console.warn("TryHackMeStats fetch error:", err);
+      }
+    }
+    loadStats();
+  }, []);
+
   const ach = PORTFOLIO_DATA.achievements;
+  const lc = stats?.leetcode;
+  const thm = stats?.tryhackme;
 
   return (
     <section id="achievements" className="py-20 relative z-10 bg-warm-bg">
@@ -27,7 +47,7 @@ export const TryHackMeStats: React.FC = () => {
         {/* Glorified Side-by-Side Dual Banners */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           
-          {/* TryHackMe Glorified Banner */}
+          {/* TryHackMe Banner */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -47,25 +67,25 @@ export const TryHackMeStats: React.FC = () => {
                   </div>
                 </div>
                 <span className="px-3 py-1 text-xs font-mono font-bold bg-warm-accent text-white rounded-full">
-                  Top 5% Global
+                  {thm?.thmRank || "Top 5% Global"}
                 </span>
               </div>
 
               <div className="space-y-3 mb-6 font-mono text-xs">
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
-                  <span className="text-warm-textSecondary">Global Ranking &amp; Title</span>
-                  <span className="font-bold text-warm-textPrimary text-sm">{ach.tryHackMeRank} ({ach.tryHackMeTitle})</span>
+                  <span className="text-warm-textSecondary">Global Ranking &amp; Status</span>
+                  <span className="font-bold text-warm-textPrimary text-sm">{thm?.thmRank || "Top 5% Global"}</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Continuous Learning Streak</span>
                   <span className="font-bold text-warm-accent flex items-center gap-1">
                     <Flame className="w-4 h-4" />
-                    {ach.thmStreak}
+                    {thm?.thmStreak || ach.thmStreak}
                   </span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Labs &amp; Badges Completed</span>
-                  <span className="font-bold text-warm-blue">{ach.thmRooms} • {ach.thmBadges}</span>
+                  <span className="font-bold text-warm-blue">{thm?.thmRooms || ach.thmRooms} • {thm?.thmBadges || ach.thmBadges}</span>
                 </div>
               </div>
             </div>
@@ -81,7 +101,7 @@ export const TryHackMeStats: React.FC = () => {
             </a>
           </motion.div>
 
-          {/* LeetCode Glorified Banner */}
+          {/* LeetCode Banner (100% Dynamic API driven) */}
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -102,22 +122,26 @@ export const TryHackMeStats: React.FC = () => {
                 </div>
                 <span className="px-3 py-1 text-xs font-mono font-bold bg-warm-blue text-white rounded-full flex items-center gap-1">
                   <Sparkles className="w-3 h-3" />
-                  100 Days Badge 2026
+                  {lc?.badge || "100 Days Badge 2026"}
                 </span>
               </div>
 
               <div className="space-y-3 mb-6 font-mono text-xs">
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Total Problems Solved</span>
-                  <span className="font-bold text-warm-textPrimary text-sm">{ach.leetCodeSolved}</span>
+                  <span className="font-bold text-warm-textPrimary text-sm">{lc?.totalSolved || 379}+ Solved</span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
                   <span className="text-warm-textSecondary">Difficulty Breakdown</span>
-                  <span className="font-bold text-warm-blue">{ach.leetCodeEasy} | {ach.leetCodeMedium} | {ach.leetCodeHard}</span>
+                  <span className="font-bold text-warm-blue">
+                    Easy: {lc?.easySolved || 159} | Med: {lc?.mediumSolved || 169} | Hard: {lc?.hardSolved || 51}
+                  </span>
                 </div>
                 <div className="p-3.5 rounded-xl bg-warm-bgSecondary border border-warm-border flex items-center justify-between">
-                  <span className="text-warm-textSecondary">Streak Milestone</span>
-                  <span className="font-bold text-warm-success">{ach.leetCodeBadge}</span>
+                  <span className="text-warm-textSecondary">Global Ranking</span>
+                  <span className="font-bold text-warm-success">
+                    #{lc?.ranking ? lc.ranking.toLocaleString() : "340,179"}
+                  </span>
                 </div>
               </div>
             </div>

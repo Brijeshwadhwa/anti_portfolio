@@ -102,7 +102,7 @@ export const Projects: React.FC = () => {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3">
+                <div className="flex flex-wrap items-center gap-2.5">
                   <button
                     onClick={() => setActiveModalProject(project)}
                     className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-warm-accent hover:bg-warm-accentHover text-white text-xs font-semibold transition-all shadow-warm-sm"
@@ -110,6 +110,19 @@ export const Projects: React.FC = () => {
                     <span>Read Case Study</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </button>
+
+                  {project.liveDemoUrl && (
+                    <a
+                      href={project.liveDemoUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-white border border-warm-border text-warm-textPrimary hover:border-warm-accent text-xs font-mono font-bold transition-colors shadow-xs"
+                      title="Live Demo"
+                    >
+                      <ExternalLink className="w-3.5 h-3.5 text-warm-accent" />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
 
                   <a
                     href={project.githubUrl}
