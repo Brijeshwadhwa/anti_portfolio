@@ -71,6 +71,12 @@ export const About: React.FC = () => {
                 STIX 2.1 schemas, Threat Feed Ingestion, URL Shannon Entropy math, and Nmap discovery automation.
               </p>
             </div>
+
+            <div className="warm-card p-6 rounded-2xl space-y-2">
+              <span className="text-xs font-mono uppercase text-warm-textSecondary block">Location</span>
+              <h4 className="font-bold text-warm-textPrimary text-sm">{PORTFOLIO_DATA.personal.location}</h4>
+              <p className="text-[11px] text-warm-textSecondary font-mono">Open to On-site, Hybrid &amp; Remote Roles</p>
+            </div>
           </motion.div>
 
         </div>
